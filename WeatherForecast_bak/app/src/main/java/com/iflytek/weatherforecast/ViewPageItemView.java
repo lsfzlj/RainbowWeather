@@ -22,9 +22,9 @@ import java.util.concurrent.Future;
 public class ViewPageItemView extends FrameLayout {
 
 	/** 图片的名称 */
-	private ImageView[] imageViews;
+
 	private ImageView imageView;
-	private ViewGroup group;
+
 	//
 	private TextView chengshi;
 	private TextView riqi;
@@ -34,6 +34,8 @@ public class ViewPageItemView extends FrameLayout {
 	private TextView zuigaoqiwen;
 	private TextView fengxiang;
 	private TextView fengli;
+	public static  ViewGroup group;
+	private ImageView[] imageViews;
 
 	public ViewPageItemView(Context context, int size, int position) {
 		super(context);
@@ -53,7 +55,7 @@ public class ViewPageItemView extends FrameLayout {
 		zuigaoqiwen = (TextView)view.findViewById(R.id.zuigaowendu);
 		fengxiang = (TextView)view.findViewById(R.id.fengxiang);
 		fengli = (TextView)view.findViewById(R.id.fengli);
-		group = (ViewGroup) view.findViewById(R.id.viewGroup);
+	//	group = (ViewGroup) view.findViewById(R.id.viewGroup);
 		addView(view);
 	}
 
@@ -91,19 +93,12 @@ public class ViewPageItemView extends FrameLayout {
 		group = (ViewGroup) findViewById(R.id.viewGroup);
 		for(int i=0;i<len;i++){
 			imageView = new ImageView(context);
-			if(i==position){
-				imageView.setLayoutParams(new ViewGroup.LayoutParams(60,60));
-				imageViews[i] = imageView;
-				imageViews[i].setBackgroundResource(R.drawable.circlemy);  //page_indicator_focused
-				imageView.setPadding(0, 40, 40, 40);
-			//	imageView.layout
-			}else{
-				imageView.setLayoutParams(new ViewGroup.LayoutParams(40,40));
-				imageView.setPadding(10, 40, 0, 40);
-				imageViews[i] = imageView;
-				imageViews[i].setBackgroundResource(R.drawable.circlemy);  //page_indicator
+			imageView.setLayoutParams(new ViewGroup.LayoutParams(50,50));
+			imageView.setBackgroundResource(R.drawable.circlemy);
+			if(i!=position){
+				imageView.setAlpha((float) 0.5);
 			}
-			group.addView(imageViews[i]);
+			group.addView(imageView);
 		}
 	}
 	// 资源回收

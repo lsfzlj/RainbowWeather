@@ -11,8 +11,10 @@ import android.preference.PreferenceManager;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import java.util.Comparator;
 import java.util.HashSet;
@@ -25,6 +27,7 @@ public class ViewPageActivity extends Activity implements View.OnClickListener {
 	private ViewPageAdapter adapter;
 	private String []citiesSHaredPreference;
 	private Context context = ViewPageActivity.this;
+
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -46,6 +49,7 @@ public class ViewPageActivity extends Activity implements View.OnClickListener {
 		if (v.getId() == R.id.setting) {
 			Intent intent = new Intent();
 			intent.setClass(this, City_Column.class);
+			finish();
 			startActivity(intent);
 		}
 	}

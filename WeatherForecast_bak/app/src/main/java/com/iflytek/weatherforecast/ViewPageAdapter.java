@@ -9,6 +9,8 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -18,6 +20,7 @@ public class ViewPageAdapter extends PagerAdapter {
 	static final String TAG ="adapter";
 	private Context context;
 	private String[] setCities;
+	int pos;
 
 	private Map<Integer, ViewPageItemView> hashMap;
 
@@ -37,6 +40,7 @@ public class ViewPageAdapter extends PagerAdapter {
 	@Override
 	public Object instantiateItem(View container, int position) {
 		ViewPageItemView itemView;
+		pos=position;
 		if (hashMap.containsKey(position)) {
 			itemView = hashMap.get(position);
 			itemView.reload();
@@ -45,12 +49,16 @@ public class ViewPageAdapter extends PagerAdapter {
 			String city = setCities[position];
 			//初始化界面信息
 			itemView.setData(city);
+			//Log.d(TAG, "instantiateItem: Position"+position);
 			//滑动底部的小圆圈
+			//imageView.setLayoutParams();
 			itemView.setGroup(context,setCities.length,position);
 			hashMap.put(position, itemView);
 			((ViewPager) container).addView(itemView);
 		}
-		Log.d(TAG, "instantiateItem: "+position);
+
+
+
 		return itemView;
 	}
 
@@ -83,6 +91,7 @@ public class ViewPageAdapter extends PagerAdapter {
 
 	@Override
 	public void finishUpdate(View view) {
+
 		;
 	}
 
