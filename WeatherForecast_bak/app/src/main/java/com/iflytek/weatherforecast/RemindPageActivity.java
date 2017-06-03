@@ -47,6 +47,7 @@ public class RemindPageActivity extends AppCompatActivity implements View.OnClic
             case R.id.new_remindpage:
                 Intent intentNewRemind = new Intent(this,AddRemind.class);
                 intentNewRemind.putExtra("toAddRemind",city);
+                finish();
                 startActivity(intentNewRemind);
                 break;
             case R.id.return_remindpage:

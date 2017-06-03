@@ -5,6 +5,8 @@ package com.iflytek.weatherforecast;
 
 import android.content.Context;
 import android.graphics.Typeface;
+import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,7 +21,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
-public class ViewPageItemView extends FrameLayout {
+public class ViewPageItemView extends FrameLayout{
 
 	/** 图片的名称 */
 
@@ -35,7 +37,6 @@ public class ViewPageItemView extends FrameLayout {
 	private TextView fengxiang;
 	private TextView fengli;
 	public static  ViewGroup group;
-	private ImageView[] imageViews;
 
 	public ViewPageItemView(Context context, int size, int position) {
 		super(context);
@@ -89,7 +90,6 @@ public class ViewPageItemView extends FrameLayout {
 	}
 	//实现滑动 导航小圆圈
 	public void setGroup(Context context, int len , int position){
-		imageViews = new ImageView[len];
 		group = (ViewGroup) findViewById(R.id.viewGroup);
 		for(int i=0;i<len;i++){
 			imageView = new ImageView(context);
@@ -107,5 +107,4 @@ public class ViewPageItemView extends FrameLayout {
 	// 重新加载资源
 	public void reload() {
 	}
-
 }

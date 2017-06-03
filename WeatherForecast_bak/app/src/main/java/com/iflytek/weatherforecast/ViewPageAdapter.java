@@ -52,7 +52,7 @@ public class ViewPageAdapter extends PagerAdapter {
 			//Log.d(TAG, "instantiateItem: Position"+position);
 			//滑动底部的小圆圈
 			//imageView.setLayoutParams();
-			itemView.setGroup(context,setCities.length,position);
+			//itemView.setGroup(context,setCities.length,position);
 			hashMap.put(position, itemView);
 			((ViewPager) container).addView(itemView);
 		}

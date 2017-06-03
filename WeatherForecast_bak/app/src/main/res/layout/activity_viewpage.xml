@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:weightSum="1"
-    android:background="@mipmap/back_ground2">
+    android:background="@mipmap/city_column_back">
 
 
     <!-- ViewPager是一个控件 -->
@@ -28,6 +28,16 @@
         android:text="设置" />
 
     <!--</LinearLayout>-->
+    <LinearLayout
+        android:id="@+id/viewGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="70dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+    </LinearLayout>
 
 
 </RelativeLayout>

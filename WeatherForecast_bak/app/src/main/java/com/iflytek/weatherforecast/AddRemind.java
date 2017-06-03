@@ -103,6 +103,9 @@ public class AddRemind extends AppCompatActivity implements View.OnClickListener
                 break;
             case R.id.return_remindpage:
                 finish();
+                Intent intent = new Intent(this,RemindPageActivity.class);
+                intent.putExtra("toRemindPage",myCity);
+                startActivity(intent);
                 break;
             default:
                 break;

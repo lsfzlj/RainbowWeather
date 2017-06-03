@@ -34,12 +34,17 @@ public class ViewPageActivity extends Activity implements View.OnClickListener {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_viewpage);
-
-		Set<String> temp = new HashSet<>();
-		Set<String> temp2=new TreeSet<>();
-		temp = getSharedPreferences("cities", MODE_PRIVATE).getStringSet("cities", temp);
 		citiesSHaredPreference = MainActivity.getCities();
 		initView();
+		ViewGroup viewGroup = (ViewGroup)findViewById(R.id.viewGroup);
+		for(int i=0;i<citiesSHaredPreference.length;i++){
+			ImageView imageView = new ImageView(this.context);
+			imageView.setLayoutParams(new ViewGroup.LayoutParams(50,50));
+			imageView.setBackgroundResource(R.drawable.circlemy);
+			if(i!=0)
+				imageView.setAlpha((float)(0.5));
+			viewGroup.addView(imageView);
+		}
 		Button setting = (Button) findViewById(R.id.setting);
 		setting.setOnClickListener(this);
 	}
@@ -58,6 +63,7 @@ public class ViewPageActivity extends Activity implements View.OnClickListener {
 		viewPager = (ViewPager) findViewById(R.id.viewpage);
 		adapter = new ViewPageAdapter(context, citiesSHaredPreference);
 		viewPager.setAdapter(adapter);
+		viewPager.setOnPageChangeListener(new MyOnPageChangeListener());
 	}
 
 	class MyComparator implements Comparator<String> {
@@ -65,6 +71,29 @@ public class ViewPageActivity extends Activity implements View.OnClickListener {
 		@Override
 		public int compare(String o1, String o2) {
 			return o2.compareTo(o1);//降序排列
+		}
+	}
+
+	public class MyOnPageChangeListener implements ViewPager.OnPageChangeListener {
+		public void onPageScrollStateChanged(int arg0) {
+
+		}
+
+		public void onPageScrolled(int arg0, float arg1, int arg2) {
+
+
+		}
+
+		public void onPageSelected(int position) {
+			Log.d("viewpageiacitivity", "onPageSelected: "+position);
+			ViewGroup group = (ViewGroup) findViewById(R.id.viewGroup);
+			for(int i=0;i<citiesSHaredPreference.length;i++){
+				if(i==position)
+					group.getChildAt(i).setAlpha((float) 1);
+				else
+					group.getChildAt(i).setAlpha((float) 0.5);
+			}
+
 		}
 	}
 }
