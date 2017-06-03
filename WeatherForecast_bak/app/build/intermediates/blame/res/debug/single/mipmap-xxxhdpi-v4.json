@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "E:\\work_project\\androidStdio\\my_read_second_line\\WeatherForecast_bak\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi-v4\\back_ground.jpg",
+        "source": "E:\\work_project\\androidStdio\\my_read_second_line\\WeatherForecast_bak\\app\\src\\main\\res\\mipmap-xxxhdpi\\back_ground.jpg"
+    },
+    {
+        "merged": "E:\\work_project\\androidStdio\\my_read_second_line\\WeatherForecast_bak\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi-v4\\back_ground2.jpg",
+        "source": "E:\\work_project\\androidStdio\\my_read_second_line\\WeatherForecast_bak\\app\\src\\main\\res\\mipmap-xxxhdpi\\back_ground2.jpg"
+    }
+]
