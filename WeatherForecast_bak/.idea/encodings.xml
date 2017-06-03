@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/app/libs/Msc.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/libs/arm64-v8a" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/libs/armeabi" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/libs/armeabi-v7a" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/libs/mips" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/libs/mips64" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/libs/x86" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/libs/x86_64" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/iflytek/weatherforecast/City_Column.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/iflytek/weatherforecast/DisplayActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/iflytek/weatherforecast/GetWeatherThread.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/iflytek/weatherforecast/MainActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/iflytek/weatherforecast/ViewPageActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/iflytek/weatherforecast/ViewPageAdapter.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/iflytek/weatherforecast/ViewPageItemView.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/voice/JsonParser.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/voice/MyRecognizerDialogLister.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/voice/VoiceToWord.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/jniLibs" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/icon_microphone.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/page_indicator.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/page_indicator_focused.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/jniLibs/libmsc.so" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

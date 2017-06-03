@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        tools:layout_editor_absoluteY="400dp"
+        tools:layout_editor_absoluteX="8dp"
+        android:id="@+id/ReaLayout"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true">
+
+        <Button
+            android:id="@+id/returnback"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="返回" />
+
+        <Button
+            android:id="@+id/addCity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="225dp"
+            android:text="添加" />
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/cities_list"
+        android:layout_width="368dp"
+        android:layout_height="430dp"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="8dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/ReaLayout"
+        android:layout_alignStart="@+id/ReaLayout"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/ReaLayout"/>
+</RelativeLayout>
