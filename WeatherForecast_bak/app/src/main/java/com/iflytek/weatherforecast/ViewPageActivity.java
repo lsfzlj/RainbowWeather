@@ -37,6 +37,7 @@ public class ViewPageActivity extends Activity implements View.OnClickListener {
 		citiesSHaredPreference = MainActivity.getCities();
 		initView();
 		ViewGroup viewGroup = (ViewGroup)findViewById(R.id.viewGroup);
+		//初始化viewpage导航 圆圈
 		for(int i=0;i<citiesSHaredPreference.length;i++){
 			ImageView imageView = new ImageView(this.context);
 			imageView.setLayoutParams(new ViewGroup.LayoutParams(50,50));
@@ -64,14 +65,6 @@ public class ViewPageActivity extends Activity implements View.OnClickListener {
 		adapter = new ViewPageAdapter(context, citiesSHaredPreference);
 		viewPager.setAdapter(adapter);
 		viewPager.setOnPageChangeListener(new MyOnPageChangeListener());
-	}
-
-	class MyComparator implements Comparator<String> {
-
-		@Override
-		public int compare(String o1, String o2) {
-			return o2.compareTo(o1);//降序排列
-		}
 	}
 
 	public class MyOnPageChangeListener implements ViewPager.OnPageChangeListener {

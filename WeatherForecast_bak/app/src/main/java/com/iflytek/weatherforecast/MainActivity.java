@@ -49,7 +49,6 @@ public class MainActivity extends Activity implements View.OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_new);
         prefs = getSharedPreferences("cities",MODE_PRIVATE);
-
         if(!sharedPreferenceIsEmpty()){
             Intent intent = new Intent();
             intent.setClass(getApplicationContext(),ViewPageActivity.class);
@@ -97,11 +96,11 @@ public class MainActivity extends Activity implements View.OnClickListener{
         button15.setOnClickListener(this);
         button16.setOnClickListener(this);
 
-//        //NetworkBroadcast
-//        intentFilter = new IntentFilter();
-//        intentFilter.addAction("android.net.conn.CONNECTIVITY_CHANGE");
-//        networkChangeReceiver = new NetworkChangeReceiver();
-//        registerReceiver(networkChangeReceiver,intentFilter);
+        //NetworkBroadcast
+        intentFilter = new IntentFilter();
+        intentFilter.addAction("android.net.conn.CONNECTIVITY_CHANGE");
+        networkChangeReceiver = new NetworkChangeReceiver();
+        registerReceiver(networkChangeReceiver,intentFilter);
         SpeechUtility.createUtility(this, SpeechConstant.APPID+"=592523d0");
     }
     protected void onDestroy() {
@@ -113,7 +112,6 @@ public class MainActivity extends Activity implements View.OnClickListener{
         switch (v.getId()){
             case R.id.search:
                 inputCity = editText.getText().toString();
-
                 ExecutorService executorService = Executors.newCachedThreadPool();
                 Future<Weather> futureWeather = executorService.submit(new GetWeatherThread(inputCity));
                 try {
@@ -223,7 +221,6 @@ public class MainActivity extends Activity implements View.OnClickListener{
            set2.add(e.toString());
            editor.putStringSet("cities", set2);
            editor.apply();
-           Log.d("mainact", "run: " + set2.toString());
        }
    }
     static class deleteCityThread implements Runnable{
@@ -279,37 +276,6 @@ public class MainActivity extends Activity implements View.OnClickListener{
             Log.d("main act", "sharePreferencePrint: "+it.next());
         }
     }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        Log.d(TAG, "onStart: ");
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Log.d(TAG, "onResume: ");
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        Log.d(TAG, "onPause: ");
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        Log.d(TAG, "onStop: ");
-    }
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-        Log.d(TAG, "onRestart: ");
-    }
-
-
     public void initSpeech(final Context context) {
         //1.创建RecognizerDialog对象
         RecognizerDialog mDialog = new RecognizerDialog(context,null);
