@@ -57,7 +57,6 @@ public class RemindPageActivity extends AppCompatActivity implements View.OnClic
     }
     public ArrayList<String> getDates(){
         SharedPreferences sharedPreferences = getSharedPreferences(city,MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
         Set<String> set = new HashSet<>();
         set = sharedPreferences.getStringSet(city,set);
         ArrayList<String>dates = new ArrayList<String>(set);

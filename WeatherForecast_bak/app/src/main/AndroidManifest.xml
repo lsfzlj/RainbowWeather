@@ -41,6 +41,12 @@
 
         <activity android:name=".RemindPageActivity" />
         <activity android:name=".AddRemind"></activity>
+        <service
+            android:name=".LongRunningService"
+            android:enabled="true"
+            android:exported="true"></service>
+        <receiver android:name=".AlarmReceiver" >
+        </receiver>
     </application>
 
 </manifest>

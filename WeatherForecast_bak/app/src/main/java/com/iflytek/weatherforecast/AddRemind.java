@@ -32,6 +32,7 @@ public class AddRemind extends AppCompatActivity implements View.OnClickListener
     private boolean setTimeFlag;
     private Date mDate;
     private String myCity ;
+    static public SharedPreferences sharecity ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,7 +64,7 @@ public class AddRemind extends AppCompatActivity implements View.OnClickListener
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int day) {
                         mDate.setMonth(month);
-                        mDate.setYear(year-1900);
+                        mDate.setYear(year-1900);  //date存储的year参数需要减去 1900,
                         mDate.setDate(day);
                         // 更新EditText控件日期 小于10加0
                         shezhiriqi.setText(new StringBuilder()
@@ -97,8 +98,19 @@ public class AddRemind extends AppCompatActivity implements View.OnClickListener
                 if(!setDateFlag||!setTimeFlag){
                     Toast.makeText(this,"日期或者时间参数无效，请确认",Toast.LENGTH_SHORT).show();
                 }else{
-                    addOrDeleteDate(myCity,mDate,true);
-                    Toast.makeText(this,"日期与时间参数已保存",Toast.LENGTH_SHORT).show();
+                    Date current = new Date();
+                    if(mDate.getTime()>current.getTime()){
+                        addOrDeleteDate(myCity,mDate,true);
+                        Long LeftTime = mDate.getTime()-current.getTime();
+                        Intent newService = new Intent(this,LongRunningService.class);
+                        newService.putExtra("comparedTime",LeftTime);
+                        newService.putExtra("serviceCity",myCity);
+                        startService(newService);
+                        Toast.makeText(this,"日期与时间参数已保存",Toast.LENGTH_SHORT).show();
+                        Log.d(TAG, "onClick: "+mDate.getTime()+"    "+current.getTime());
+                    }else{
+                        Toast.makeText(this,"设置的日期在当前时间之前，无效",Toast.LENGTH_SHORT).show();
+                    }
                 }
                 break;
             case R.id.return_remindpage:

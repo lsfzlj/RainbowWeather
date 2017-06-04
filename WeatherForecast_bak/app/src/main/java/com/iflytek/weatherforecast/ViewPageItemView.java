@@ -75,7 +75,7 @@ public class ViewPageItemView extends FrameLayout{
 		String[]weekDays={"星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"};
 		Calendar now = Calendar.getInstance();
 		now.setTimeZone(TimeZone.getTimeZone("Asia/Shanghai"));
-		dateNow=now.get(Calendar.MONTH)+"月 "+now.get(Calendar.DAY_OF_MONTH)+"日 "+weekDays[now.get(Calendar.DAY_OF_WEEK)-1];
+		dateNow=(now.get(Calendar.MONTH)+1)+"月 "+now.get(Calendar.DAY_OF_MONTH)+"日 "+weekDays[now.get(Calendar.DAY_OF_WEEK)-1];
 		riqi.setText(dateNow);
 		tianqizhuangkuang.setText("天气状况： "+weather.weatherCurrent);
 		dangqianwendu.setText("当前温度： "+Integer.toString( weather.tempatureCurrent));

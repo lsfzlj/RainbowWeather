@@ -70,6 +70,7 @@ public class City_Column extends AppCompatActivity implements View.OnClickListen
                 SharedPreferences shareDates = getSharedPreferences(city,MODE_PRIVATE);
                 SharedPreferences.Editor editorShareDates = shareDates.edit();
                 editorShareDates.clear();
+                editorShareDates.apply();
                 break;
             case 2:
                 Intent toRemindPage = new Intent(this,RemindPageActivity.class);

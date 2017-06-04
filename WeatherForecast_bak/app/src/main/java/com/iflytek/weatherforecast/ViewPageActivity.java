@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import java.util.Comparator;
 import java.util.HashSet;
@@ -35,6 +36,11 @@ public class ViewPageActivity extends Activity implements View.OnClickListener {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_viewpage);
 		citiesSHaredPreference = MainActivity.getCities();
+		if(citiesSHaredPreference.length==0){
+			Intent intent = new Intent(this,MainActivity.class);
+			startActivity(intent);
+			Toast.makeText(this,"没有城市可以显示",Toast.LENGTH_SHORT).show();
+		}
 		initView();
 		ViewGroup viewGroup = (ViewGroup)findViewById(R.id.viewGroup);
 		//初始化viewpage导航 圆圈
