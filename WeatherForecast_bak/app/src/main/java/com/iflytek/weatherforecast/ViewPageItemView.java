@@ -58,7 +58,7 @@ public class ViewPageItemView extends FrameLayout{
 
 	// 填充数据
 	public void setData(String city) {
-		Weather weather=new Weather();
+		Weather weather = new Weather();
 		ExecutorService exec = Executors.newCachedThreadPool();
 		Future<Weather> futureWeather = exec.submit(new GetWeatherThread(city));
 		try{

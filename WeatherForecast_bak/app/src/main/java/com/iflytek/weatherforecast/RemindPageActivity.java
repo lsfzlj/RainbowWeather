@@ -19,7 +19,7 @@ public class RemindPageActivity extends AppCompatActivity implements View.OnClic
     private String city;
     private ListView listDates;
     private ArrayAdapter<String> adapter;
- //   private SharedPreferences.Editor dataEditor;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

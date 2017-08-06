@@ -178,6 +178,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
                 break;
         }
     }
+
     class NetworkChangeReceiver extends BroadcastReceiver{
         public void onReceive(Context context, Intent intent){
             ConnectivityManager connectionManger = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -191,7 +192,8 @@ public class MainActivity extends Activity implements View.OnClickListener{
             }
         }
     }
-   static class addCityThread implements Runnable {
+
+    static class addCityThread implements Runnable {
        public addCityThread(String in) {
            city = in;
            containCity = false;
@@ -223,6 +225,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
            editor.apply();
        }
    }
+
     static class deleteCityThread implements Runnable{
         private String city;
         deleteCityThread(String in){city=in;}
@@ -264,11 +267,13 @@ public class MainActivity extends Activity implements View.OnClickListener{
         }
         return citiesSHaredPreference;
     }
+
     public boolean sharedPreferenceIsEmpty(){
         Set<String> set = new HashSet<>();
         set = prefs.getStringSet("cities",set);
         return set.isEmpty();
     }
+
     static public void sharePreferencePrint(){
         Set<String> set = new HashSet<>();
         set = prefs.getStringSet("cities",set);
@@ -276,6 +281,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
             Log.d("main act", "sharePreferencePrint: "+it.next());
         }
     }
+
     public void initSpeech(final Context context) {
         //1.创建RecognizerDialog对象
         RecognizerDialog mDialog = new RecognizerDialog(context,null);
